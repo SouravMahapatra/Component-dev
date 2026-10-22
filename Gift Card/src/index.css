@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-neutral-50 font-sans text-neutral-900 antialiased;
+}
+
+/* Shimmering hint text in the drop zone */
+.shimmer-text {
+  background: linear-gradient(90deg, #a3a3a3 0%, #a3a3a3 40%, #404040 50%, #a3a3a3 60%, #a3a3a3 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 2.4s linear infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
