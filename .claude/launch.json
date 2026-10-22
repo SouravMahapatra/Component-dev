@@ -1,6 +1,27 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "search-input", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "Search Input", "run", "dev"], "port": 5173 }
+    {
+      "name": "search-input",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "Search Input",
+        "run",
+        "dev"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "dropdown",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "Dropdown",
+        "run",
+        "dev"
+      ],
+      "port": 5174
+    }
   ]
 }
