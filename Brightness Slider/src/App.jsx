@@ -1,0 +1,42 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { RotateCcw } from "lucide-react";
+import BrightnessSlider from "./components/BrightnessSlider.jsx";
+
+export default function App() {
+  const [brightness, setBrightness] = useState(40);
+
+  return (
+    <main className="flex min-h-screen items-center justify-center p-4 sm:p-8">
+      <div className="w-full max-w-5xl rounded-[28px] bg-neutral-100 p-2">
+        <div className="relative flex h-[520px] items-center justify-center overflow-hidden rounded-[22px] border border-neutral-200 bg-neutral-50 px-4">
+          {/* Subtle dot grid, fading out toward the edges */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundImage: "radial-gradient(rgba(0,0,0,0.13) 1px, transparent 1px)",
+              backgroundSize: "18px 18px",
+              maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%)",
+              WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%)",
+            }}
+          />
+          <div className="relative flex flex-col items-center gap-6">
+            <BrightnessSlider value={brightness} onChange={setBrightness} />
+            <p className="font-mono text-[13px] tabular-nums text-neutral-400">{brightness}%</p>
+          </div>
+
+          <motion.button
+            type="button"
+            onClick={() => setBrightness(40)}
+            whileTap={{ scale: 0.95 }}
+            className="group absolute bottom-5 left-5 flex items-center gap-2 text-[15px] text-neutral-600 hover:text-neutral-900"
+          >
+            <RotateCcw size={16} className="transition-transform duration-300 group-hover:-rotate-90" />
+            Reset
+          </motion.button>
+        </div>
+      </div>
+    </main>
+  );
+}
