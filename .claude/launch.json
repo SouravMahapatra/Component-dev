@@ -33,6 +33,17 @@
         "dev"
       ],
       "port": 5180
+    },
+    {
+      "name": "slider",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "Slider",
+        "run",
+        "dev"
+      ],
+      "port": 5181
     }
   ]
 }
