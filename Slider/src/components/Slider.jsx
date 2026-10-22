@@ -129,15 +129,15 @@ export default function Slider({
       onPointerCancel={release}
       animate={{ scale: pressed ? 0.985 : 1 }}
       transition={pressSpring}
-      className="relative h-12 w-96 max-w-full cursor-ew-resize touch-none select-none rounded-[10px] bg-neutral-100/80 outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60"
+      className="relative h-12 w-96 max-w-full cursor-ew-resize touch-none select-none rounded-[10px] bg-neutral-100/80 outline-none focus-visible:ring-2 focus-visible:ring-neutral-400/60"
     >
       {/* Fill */}
       <motion.div
         className="absolute inset-y-0 left-0 rounded-[10px] border bg-white"
         style={{ width: fill }}
         animate={{
-          borderColor: pressed ? "#c4e97c" : "#e5e5e5",
-          boxShadow: pressed ? "0 4px 14px -6px rgba(124,179,42,0.3)" : "0 1px 2px rgba(0,0,0,0.03)",
+          borderColor: pressed ? "#d4d4d4" : "#e5e5e5",
+          boxShadow: pressed ? "0 4px 14px -6px rgba(0,0,0,0.12)" : "0 1px 2px rgba(0,0,0,0.03)",
         }}
         transition={pressSpring}
       />
@@ -161,7 +161,7 @@ export default function Slider({
         style={{ left: handleX, y: "-50%" }}
         animate={{
           height: pressed ? 22 : 14,
-          backgroundColor: pressed ? "#7cb32a" : "#d4d4d4",
+          backgroundColor: pressed ? "#737373" : "#d4d4d4",
         }}
         transition={pressSpring}
       />
