@@ -113,11 +113,10 @@ export default function GiftCard({
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  // Tilt the card in the direction it's being flung
-  const rotate = useSpring(useTransform(useVelocity(x), [-1200, 1200], [-6, 6]), {
-    stiffness: 260,
-    damping: 16, // low damping → the tilt wobbles back to level on release
-  });
+  // Tilt the card in the direction it's being flung. Raw pointer velocity is
+  // spiky, so smooth it first; the tilt then leans and levels out gradually
+  const smoothVelocity = useSpring(useVelocity(x), { stiffness: 90, damping: 22, mass: 0.8 });
+  const rotate = useTransform(smoothVelocity, [-2000, 2000], [-5, 5], { clamp: true });
 
   useEffect(() => {
     if (status !== "activating") return;
