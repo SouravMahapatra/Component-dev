@@ -97,7 +97,7 @@ const STAGE_H = ZONE_TOP + ZONE_H;
 const STAGE_LIFT = -(CARD_H + GAP) / 2;
 
 export default function GiftCard({
-  from = "Matt",
+  from = "Sourav",
   amount = "$100",
   holder = "Sourav Mahapatra",
   number = "5367 4567 8901 2345",
