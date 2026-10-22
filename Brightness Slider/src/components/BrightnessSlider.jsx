@@ -120,12 +120,12 @@ export default function BrightnessSlider({ value, onChange, width = 232 }) {
         onPointerUp={release}
         onPointerCancel={release}
         // Generous hit area around the thin track
-        className="relative flex h-14 cursor-pointer touch-none select-none items-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-4"
+        className="relative flex h-14 cursor-pointer touch-none select-none items-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60 focus-visible:ring-offset-4"
         style={{ width }}
       >
         <div ref={trackRef} className="relative h-4 w-full overflow-hidden rounded-full bg-neutral-200">
           <motion.div
-            className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-500 to-blue-600"
+            className="absolute inset-y-0 left-0 bg-gradient-to-r from-brand-400 to-brand-500"
             style={{ width: fillW }}
           />
         </div>
@@ -146,9 +146,9 @@ export default function BrightnessSlider({ value, onChange, width = 232 }) {
                 backgroundColor: pressed ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,1)",
                 borderColor: pressed ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0)",
                 boxShadow: pressed
-                  ? // Chromatic dispersion pooled along the bottom edge: blue, violet and cyan fringes
-                    "inset 3px -3px 5px -1px rgba(59,130,246,0.55), inset -3px -3px 5px -1px rgba(139,92,246,0.45), inset 0 -4px 6px -1px rgba(34,211,238,0.4), inset 0 2px 3px rgba(255,255,255,0.9), 0 8px 22px -10px rgba(37,99,235,0.45)"
-                  : "inset 0 0 0 rgba(59,130,246,0), inset 0 0 0 rgba(139,92,246,0), inset 0 0 0 rgba(34,211,238,0), inset 0 0 0 rgba(255,255,255,0), 0 10px 24px -6px rgba(0,0,0,0.22)",
+                  ? // Chromatic dispersion pooled along the bottom edge: lime, leaf and pale-green fringes
+                    "inset 3px -3px 5px -1px rgba(155,210,63,0.55), inset -3px -3px 5px -1px rgba(124,179,42,0.45), inset 0 -4px 6px -1px rgba(217,240,166,0.4), inset 0 2px 3px rgba(255,255,255,0.9), 0 8px 22px -10px rgba(124,179,42,0.45)"
+                  : "inset 0 0 0 rgba(155,210,63,0), inset 0 0 0 rgba(124,179,42,0), inset 0 0 0 rgba(217,240,166,0), inset 0 0 0 rgba(255,255,255,0), 0 10px 24px -6px rgba(0,0,0,0.22)",
               }}
               // Ease into glass, but snap straight back to solid on release — a spring here lingers
               transition={pressed ? { duration: 0.25, ease: "easeOut" } : { duration: 0.1, ease: "easeOut" }}
@@ -167,7 +167,7 @@ export default function BrightnessSlider({ value, onChange, width = 232 }) {
                 className="pointer-events-none absolute -inset-px rounded-full p-[1.5px]"
                 style={{
                   background:
-                    "conic-gradient(from var(--rim-angle), #3b82f6, #22d3ee, #a78bfa, #60a5fa, #3b82f6)",
+                    "conic-gradient(from var(--rim-angle), #9bd23f, #d9f0a6, #7cb32a, #c4e97c, #9bd23f)",
                   WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
                   WebkitMaskComposite: "xor",
                   maskComposite: "exclude",
@@ -180,14 +180,14 @@ export default function BrightnessSlider({ value, onChange, width = 232 }) {
                 }}
               />
               </span>
-              {/* Reflections: a crisp specular streak on top, a soft blue bounce below */}
+              {/* Reflections: a crisp specular streak on top, a soft green bounce below */}
               <motion.span
                 className="pointer-events-none absolute left-2.5 right-5 top-[3px] h-2.5 rounded-full bg-gradient-to-b from-white to-white/0"
                 animate={{ opacity: pressed ? 0.95 : 0 }}
                 transition={{ duration: pressed ? 0.2 : 0.08 }}
               />
               <motion.span
-                className="pointer-events-none absolute bottom-[3px] left-5 right-3 h-2 rounded-full bg-gradient-to-t from-sky-300/60 to-transparent blur-[1px]"
+                className="pointer-events-none absolute bottom-[3px] left-5 right-3 h-2 rounded-full bg-gradient-to-t from-brand-300/70 to-transparent blur-[1px]"
                 animate={{ opacity: pressed ? 1 : 0 }}
                 transition={{ duration: pressed ? 0.2 : 0.08 }}
               />

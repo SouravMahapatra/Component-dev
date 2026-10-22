@@ -117,7 +117,7 @@ export default function ActionDock({ options = ["Design", "Build", "Ship"], defa
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.88 }}
             transition={dockSpring}
-            className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[18px] bg-neutral-900 text-white outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70 focus-visible:ring-offset-2"
+            className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[18px] bg-neutral-900 text-white outline-none focus-visible:ring-2 focus-visible:ring-brand-500/70 focus-visible:ring-offset-2"
           >
             <motion.span
               animate={{ rotate: open ? 135 : 0 }}
@@ -175,7 +175,7 @@ export default function ActionDock({ options = ["Design", "Build", "Ship"], defa
                   }}
                   transition={itemSpring}
                   whileTap={{ scale: 0.94 }}
-                  className={`relative h-[52px] rounded-[18px] px-5 text-[15px] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-blue-500/70 ${
+                  className={`relative h-[52px] rounded-[18px] px-5 text-[15px] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-brand-500/70 ${
                     selected === option
                       ? "font-semibold text-neutral-900"
                       : "text-neutral-700 hover:text-neutral-950"

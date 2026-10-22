@@ -20,7 +20,7 @@ const blurSwap = {
 
 function Card({ holder, number, expiry, brand, activated }) {
   return (
-    <div className="relative h-[170px] w-[270px] select-none overflow-hidden rounded-[18px] bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 p-6 text-white shadow-[0_18px_40px_-14px_rgba(37,99,235,0.55)] ring-1 ring-inset ring-white/15">
+    <div className="relative h-[170px] w-[270px] select-none overflow-hidden rounded-[18px] bg-gradient-to-br from-brand-300 via-brand-400 to-brand-600 p-6 text-brand-900 shadow-[0_18px_40px_-14px_rgba(124,179,42,0.6)] ring-1 ring-inset ring-brand-600/30">
       {/* Gloss */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/25 via-white/0 to-transparent" />
 
@@ -37,17 +37,17 @@ function Card({ holder, number, expiry, brand, activated }) {
       </AnimatePresence>
 
       <div className="relative flex items-start justify-between">
-        <span className="h-5 w-5 rounded-full bg-white/90" />
+        <span className="h-5 w-5 rounded-full bg-white/80" />
         <span className="text-[22px] font-black italic tracking-tight">{brand}</span>
       </div>
 
       <div className="absolute inset-x-6 bottom-5 flex items-end justify-between font-mono">
         <div>
-          <p className="text-[11px] uppercase tracking-wide text-white/65">{holder}</p>
+          <p className="text-[11px] uppercase tracking-wide text-brand-900/60">{holder}</p>
           <p className="mt-1 text-[13px] tracking-wide">{number}</p>
         </div>
         <div className="text-right">
-          <p className="text-[11px] uppercase tracking-wide text-white/65">Exp.</p>
+          <p className="text-[11px] uppercase tracking-wide text-brand-900/60">Exp.</p>
           <p className="mt-1 text-[13px] tracking-wide">{expiry}</p>
         </div>
       </div>
@@ -61,7 +61,7 @@ function DottedRing({ done }) {
     <motion.svg
       // Card is 270×170; ring sits 9px outside it
       viewBox="0 0 288 188"
-      className="pointer-events-none absolute -left-[9px] -top-[9px] h-[188px] w-[288px] overflow-visible text-blue-500"
+      className="pointer-events-none absolute -left-[9px] -top-[9px] h-[188px] w-[288px] overflow-visible text-brand-500"
       initial={{ opacity: 0, scale: 1.06 }}
       animate={{ opacity: done ? 0 : 1, scale: 1 }}
       transition={{ duration: 0.4, delay: done ? 0.2 : 0.25 }}
@@ -158,8 +158,8 @@ export default function GiftCard({
         animate={{
           scale: overZone ? 1.03 : 1,
           opacity: idle ? 1 : 0,
-          backgroundColor: overZone ? "#eff6ff" : "#fcfcfc",
-          borderColor: overZone ? "#bfdbfe" : "#f0f0f0",
+          backgroundColor: overZone ? "#f6fce9" : "#fcfcfc",
+          borderColor: overZone ? "#c4e97c" : "#f0f0f0",
         }}
         transition={{ ...spring, opacity: { duration: 0.35 } }}
         style={{ top: ZONE_TOP, height: ZONE_H }}
@@ -170,7 +170,7 @@ export default function GiftCard({
             key={overZone ? "release" : "drag"}
             {...blurSwap}
             transition={{ duration: 0.2 }}
-            className={`text-[17px] ${overZone ? "font-medium text-blue-600" : "shimmer-text"}`}
+            className={`text-[17px] ${overZone ? "font-medium text-brand-700" : "shimmer-text"}`}
           >
             {overZone ? "release to activate" : "drag to activate it"}
           </motion.span>
@@ -190,17 +190,17 @@ export default function GiftCard({
           )}
           {status === "activating" && (
             <motion.p key="activating" {...blurSwap}>
-              You are <span className="text-blue-600">activating</span> a {amount} digital giftcard.
+              You are <span className="text-brand-700">activating</span> a {amount} digital giftcard.
             </motion.p>
           )}
           {status === "activated" && (
             <motion.p key="activated" {...blurSwap} className="flex items-center justify-center gap-2">
-              Your {amount} giftcard is <span className="text-blue-600">active</span>
+              Your {amount} giftcard is <span className="text-brand-700">active</span>
               <motion.span
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 500, damping: 18, delay: 0.2 }}
-                className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white"
+                className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-400 text-brand-900"
               >
                 <Check size={13} strokeWidth={3} />
               </motion.span>

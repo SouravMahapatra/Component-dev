@@ -50,7 +50,7 @@ export default function SearchInput({
         // Same shadow count in every state so Framer can interpolate:
         // crisp border, soft halo ring (focus only), drop shadow
         boxShadow: focused
-          ? "0 0 0 1px rgba(59,130,246,0.9), 0 0 0 5px rgba(59,130,246,0.18), 0 10px 30px -8px rgba(59,130,246,0.25)"
+          ? "0 0 0 1px rgba(124,179,42,0.9), 0 0 0 5px rgba(178,227,91,0.35), 0 10px 30px -8px rgba(124,179,42,0.3)"
           : active
             ? "0 0 0 1px rgba(0,0,0,0.06), 0 0 0 0px rgba(23,23,23,0), 0 10px 30px -8px rgba(0,0,0,0.14)"
             : "0 0 0 1px rgba(0,0,0,0.03), 0 0 0 0px rgba(23,23,23,0), 0 6px 20px -10px rgba(0,0,0,0.10)",

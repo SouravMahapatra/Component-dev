@@ -94,7 +94,7 @@ export default function Dropdown({
         onClick={() => (open ? setOpen(false) : openMenu())}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex h-[52px] w-full items-center justify-between rounded-[22px] px-5 text-[15px] font-medium text-neutral-900 outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-blue-500/70"
+        className="flex h-[52px] w-full items-center justify-between rounded-[22px] px-5 text-[15px] font-medium text-neutral-900 outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-brand-500/70"
       >
         <span className="relative h-5 flex-1 overflow-hidden text-left">
           {/* Label slides when the value changes */}
@@ -174,14 +174,14 @@ export default function Dropdown({
                       animate={{ x: highlighted === i ? 4 : 0 }}
                       transition={spring}
                       className={`relative flex h-[42px] items-center justify-between text-[15px] ${
-                        selected ? "font-medium text-blue-600" : "text-neutral-800"
+                        selected ? "font-medium text-brand-700" : "text-neutral-800"
                       }`}
                     >
                       <span className="flex items-center gap-2.5">
                         <Icon
                           size={17}
                           strokeWidth={2}
-                          className={selected ? "text-blue-600" : "text-neutral-400"}
+                          className={selected ? "text-brand-600" : "text-neutral-400"}
                         />
                         {label}
                       </span>
